@@ -2,7 +2,7 @@ from openai import OpenAI
 from utils import *
 from paddleocr import PaddleOCR
 import torch
-import pyautogui as pg
+#import pyautogui as pg
 from ultralytics import YOLO
 
 MAX_STEP_NUM = 10
