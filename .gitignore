@@ -288,3 +288,8 @@ pyrightconfig.json
 *.h5
 *.tflite
 model_weights
+
+# data
+output_data
+input_data
+events
