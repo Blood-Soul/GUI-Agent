@@ -290,6 +290,10 @@ pyrightconfig.json
 model_weights
 
 # data
-output_data
 input_data
-events
+output_data
+gen_semanic_info_data
+tasks.json
+
+# vscode
+.vscode/
