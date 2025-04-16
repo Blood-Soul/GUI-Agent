@@ -288,3 +288,12 @@ pyrightconfig.json
 *.h5
 *.tflite
 model_weights
+
+# data
+input_data
+output_data
+gen_semanic_info_data
+tasks.json
+
+# vscode
+.vscode/

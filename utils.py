@@ -5,7 +5,7 @@ import cv2
 from PIL import Image
 import torch
 import json
-import pyautogui as pg
+#import pyautogui as pg
 from supervision.draw.color import ColorPalette
 
 def pil_to_base64(image: Image.Image) -> str:
@@ -333,3 +333,25 @@ def draw_boxes(image, boxes, boxes_area):
 
     image_pil = Image.fromarray(image_np)
     return image_pil
+
+
+def compress_pil_image(image: Image.Image, compression_ratio: float) -> Image.Image:
+    """
+    根据指定的压缩比例对 PIL 图像进行压缩。
+
+    :param image: 输入的 PIL 图像
+    :param compression_ratio: 压缩比例，范围在 0 到 1 之间，值越小压缩程度越高
+    :return: 压缩后的 PIL 图像
+    """
+    if compression_ratio <= 0 or compression_ratio > 1:
+        raise ValueError("压缩比例必须在 0 到 1 之间")
+    
+    # 计算新的尺寸
+    width, height = image.size
+    new_width = int(width * compression_ratio)
+    new_height = int(height * compression_ratio)
+    
+    # 调整图像大小
+    compressed_image = image.resize((new_width, new_height), Image.LANCZOS)
+    
+    return compressed_image
